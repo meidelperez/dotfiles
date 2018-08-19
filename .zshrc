@@ -1,0 +1,2 @@
+
+source ~/.my-zsh-config
