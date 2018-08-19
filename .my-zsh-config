@@ -19,7 +19,6 @@ zsh_wifi_signal(){
 # Common ENV variables
 export TERM="xterm-256color"
 export SHELL="/bin/zsh"
-export EDITOR="/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron"
 
 # Fix Locale
 export LANG="en_US.UTF-8"
