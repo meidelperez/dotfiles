@@ -40,6 +40,7 @@ $ brew cask install iterm2
 * Install Meslo nerd font:
 
 ```
+$ brew tap caskroom/fonts
 $ brew cask install font-meslo-nerd-font
 ```
 * Import `material-design-colors.itermcolors` from this repo into iTerm2 colotr scheme tab and select it as shown next:
