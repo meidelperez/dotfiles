@@ -5,8 +5,15 @@ This repository can be used to setup a new MacOS system.
 * Instal [homebrew](https://brew.sh/):
 
 ```
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
+
+Homebrew and next steps will require git & XCode Command line tools, in case somethig is missing eecute:
+
+```
+$ xcode-select --install
+```
+
 * Install the awesome [oh my zsh](https://ohmyz.sh/):
 
 ```
