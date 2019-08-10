@@ -1,4 +1,3 @@
 
-export EDITOR="code"
 
-source ~/.my-zsh-config
+source ~/.my-zsh-config 

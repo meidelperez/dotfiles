@@ -13,6 +13,24 @@ zsh_wifi_signal(){
 	echo -n "%F{$color}\uf1eb" # \uf1eb is 
 }
 
+#load-nvmrc() {
+#  local node_version="$(nvm version)"
+#  local nvmrc_path="$(nvm_find_nvmrc)"
+#
+#  if [ -n "$nvmrc_path" ]; then
+#    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+#
+#    if [ "$nvmrc_node_version" = "N/A" ]; then
+#      nvm install
+#    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+#      nvm use
+#    fi
+#  elif [ "$node_version" != "$(nvm version default)" ]; then
+#    echo "Reverting to nvm default version"
+#    nvm use default
+#  fi
+#}
+
 # =============================================================================
 #                                   Variables
 # =============================================================================
@@ -121,13 +139,13 @@ zplug "supercrabtree/k"
 zplug "tarrasch/zsh-bd"
 
 # Simple zsh calculator
-zplug "arzzen/calc.plugin.zsh"
+#zplug "arzzen/calc.plugin.zsh"
 
 # Directory colors
 zplug "seebi/dircolors-solarized", ignore:"*", as:plugin
 zplug "pinelibg/dircolors-solarized-zsh"
 
-zplug "plugins/common-aliase",     from:oh-my-zsh
+zplug "plugins/common-aliases",     from:oh-my-zsh
 zplug "plugins/colored-man-pages", from:oh-my-zsh
 zplug "plugins/colorize",          from:oh-my-zsh
 zplug "plugins/command-not-found", from:oh-my-zsh
@@ -161,20 +179,20 @@ fi
 
 zplug "plugins/git",               from:oh-my-zsh, if:"(( $+commands[git] ))"
 zplug "plugins/golang",            from:oh-my-zsh, if:"(( $+commands[go] ))"
-zplug "plugins/svn",               from:oh-my-zsh, if:"(( $+commands[svn] ))"
+#zplug "plugins/svn",               from:oh-my-zsh, if:"(( $+commands[svn] ))"
 zplug "plugins/node",              from:oh-my-zsh, if:"(( $+commands[node] ))"
 zplug "plugins/npm",               from:oh-my-zsh, if:"(( $+commands[npm] ))"
 zplug "plugins/bundler",           from:oh-my-zsh, if:"(( $+commands[bundler] ))"
 zplug "plugins/gem",               from:oh-my-zsh, if:"(( $+commands[gem] ))"
 zplug "plugins/rvm",               from:oh-my-zsh, if:"(( $+commands[rvm] ))"
-zplug "plugins/pip",               from:oh-my-zsh, if:"(( $+commands[pip] ))"
+#zplug "plugins/pip",               from:oh-my-zsh, if:"(( $+commands[pip] ))"
 zplug "plugins/sudo",              from:oh-my-zsh, if:"(( $+commands[sudo] ))"
 zplug "plugins/gpg-agent",         from:oh-my-zsh, if:"(( $+commands[gpg-agent] ))"
 zplug "plugins/systemd",           from:oh-my-zsh, if:"(( $+commands[systemctl] ))"
 zplug "plugins/docker",            from:oh-my-zsh, if:"(( $+commands[docker] ))"
 zplug "plugins/docker-compose",    from:oh-my-zsh, if:"(( $+commands[docker-compose] ))"
 
-#zplug "djui/alias-tips"
+zplug "djui/alias-tips"
 zplug "hlissner/zsh-autopair", defer:2
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
@@ -186,7 +204,10 @@ zplug "zsh-users/zsh-history-substring-search", defer:3
 # =============================================================================
 #                                   Options
 # =============================================================================
-#autoload -Uz add-zsh-hook
+autoload -Uz add-zsh-hook
+#add-zsh-hook chpwd load-nvmrc
+#load-nvmrc
+
 #autoload -Uz compinit && compinit -u
 #autoload -Uz url-quote-magic
 #autoload -Uz vcs_info
